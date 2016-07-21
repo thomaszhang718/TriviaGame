@@ -179,7 +179,7 @@ var triviaGame = {
             //Checks if all the questions are done and then displays the score and generates the restart button
 
             if (triviaGame.questionNumber == 10) {
-                $('#choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv').empty();
+                $('#choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv, #correctAnswerDiv').empty();
                 $("#questionAndResultsDiv").html("All done, here's how you did!");
 
                 $("#correctAnsweredDiv").html("Correct Answers: " + triviaGame.correctAnswers);
