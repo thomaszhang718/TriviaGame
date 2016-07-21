@@ -1,0 +1,71 @@
+/*Trivia Game CSS Sheet*/
+
+
+body {
+	background-image: url("../images/background.jpg");
+	background-repeat: repeat;
+	overflow: auto;
+}
+
+h1 {
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 70px;
+	text-align: center;
+	color: white;
+}
+
+.music {
+	width: 40%;
+	margin: 10px auto;
+    display: block;
+}
+
+#triviaGame {
+	margin: 50px auto;
+	position: relative;
+	width: 960px;
+	height: 600px;
+	background: white;
+}
+
+#startButtonDiv {
+	padding-top: 25%;
+}
+
+#startButton {
+	height: 100%;
+	display: block; 
+    width: 30%; 
+    margin: 0 auto;
+    font-size: 50px;
+    outline: none;
+}
+
+#restartButton {
+	height: 100%;
+	display: block; 
+    width: 30%; 
+    margin: 0 auto;
+    font-size: 50px;
+    outline: none;
+}
+
+#timeRemaining {
+	padding-top: 100px;
+}
+
+#timeRemaining, #outOfTimeText, #questionAndResultsDiv {
+	text-align: center;
+	font-size: 40px;
+}
+
+#correctAnswerDiv, #correctAnsweredDiv, #incorrectAnsweredDiv, #unAnsweredDiv {
+	text-align: center;
+	font-size: 30px;
+}
+
+#choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv {
+	text-align: center;
+	font-size: 40px;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDM Trivia Game</title>
+
+    <!-- Importing css reset, bootstrap, and styles -->
+
+    <style type ="text/css">
+        @import url("assets/css/reset.css");
+        @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+        @import url("assets/css/style.css");
+    </style>
+
+    <!-- Adding JQuery and fonts -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Container div for the game -->
+
+    <div class="container">
+
+        <!-- Header Section -->
+
+        <div class="header">
+            <header>
+                <h1>EDM Trivia Game</h1>
+            </header>
+        </div>
+        
+        <!-- Music Buttons for Play/Pause/Restart -->
+
+        <div class="music">
+            <button class="btn musicPlayButton"><span class="glyphicon glyphicon-play"></span> Play Song</button>       
+            <button class="btn musicPauseButton"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>  
+            <button class="btn musicRestartButton"><span class="glyphicon glyphicon-refresh"></span> Restart Song</button>  
+          </div>
+
+        <!-- Creating Divs and ids that we'll target using JQuery -->
+
+        <div id="triviaGame">
+        	<div id="startButtonDiv"><button id="startButton">Start</button></div>
+
+        	<div id="timeRemaining"></div>
+        	<div id="questionAndResultsDiv"></div>
+
+        	<div>
+        		<div id="correctAnswerDiv"></div>
+	        	<div id="choiceOneDiv"></div>
+	        	<div id="choiceTwoDiv"></div>
+	        	<div id="choiceThreeDiv"></div>
+	        	<div id="choiceFourDiv"></div>
+	        	<div id="correctAnsweredDiv"></div>
+	        	<div id="incorrectAnsweredDiv"></div>
+	        	<div id="unAnsweredDiv"></div>
+        	</div>
+            
+        	<div id="restartButtonDiv"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Adding the javascript file -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>
+
+
+
