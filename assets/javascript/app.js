@@ -48,8 +48,8 @@ $(document).ready(function(){
         correctChoice: "Animals"
     }, {
         question: "Who is Dillon Francis' Deep House Alter Ego?",
-        choices: ["DJ Hanzel (One Deeper)", "Greg", "DJ Rich as Fuck", "Becky"],
-        correctChoice: "DJ Hanzel (One Deeper)"
+        choices: ["DJ Hanzel", "Greg", "DJ Rich as Fuck", "Becky"],
+        correctChoice: "DJ Hanzel"
     }, {
         question: "What are the fans of the DJ named Jauz called?",
         choices: ["Nemo", "Jauzers", "Friends, Not Food", "Shark Squad"],
@@ -73,6 +73,10 @@ $(document).ready(function(){
     }
 
     ];
+
+    //Creating picsAndGIFsArray
+
+    var GIFsArray = ['assets/images/0.gif" width="600"', 'assets/images/1.gif" width="700"', 'assets/images/2.gif" width="500"', 'assets/images/3.gif" width="600"', 'assets/images/4.gif" width="300"', 'assets/images/5.gif" width="600"', 'assets/images/6.gif" width="500"', 'assets/images/7.gif" width="500"', 'assets/images/8.gif" width="450"', 'assets/images/9.gif" width="450"', ];
 
 //Creating app as an object called triviaGame
 
@@ -99,7 +103,6 @@ var triviaGame = {
         },
 
         timer: function(){ //timer function
-            
 
             //decrease time to guess by one and update the display
 
@@ -116,7 +119,7 @@ var triviaGame = {
                     triviaGame.stop();
                     $('#questionAndResultsDiv').html('<p id="outOfTimeText">Out of Time!</p>');
                     $('#choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv').empty();
-
+                    $('#GIFsDiv').html('<img class="GIFs" src="' + GIFsArray[triviaGame.questionNumber] + '>');
 
                     $('#correctAnswerDiv').html('<p id="correctAnswerText">The Correct Answer was: ' + questionsArray[triviaGame.questionNumber].correctChoice + '</p>');
                     triviaGame.unAnswered++;
@@ -151,6 +154,8 @@ var triviaGame = {
 
         startGame: function(){ //startGame function
 
+            $('#GIFsDiv').empty(); //clear any old GIF
+
             //check if this is the first time playing the game. If yes, then assign the checkGuess function to the choice divs
 
             if (triviaGame.questionNumber == 0 && triviaGame.firstRun == true) {
@@ -184,9 +189,9 @@ var triviaGame = {
 
                 $("#restartButtonDiv").html('<button id="startButton">Restart</button>');
 
-                $("#restartButtonDiv").on("click", function(){
-                    triviaGame.reset();
-                });
+                if (triviaGame.firstRun) {
+                    $("#restartButtonDiv").on("click", triviaGame.reset); //Only add on click for first run or else it will stack after multiple games
+                }
             }
 
             //For all questions, displays the time remaining, starts the timer, prints the questions
@@ -206,7 +211,7 @@ var triviaGame = {
             triviaGame.guessPicked = true;
             triviaGame.stop();
             $('#choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv').empty();
-
+            $('#GIFsDiv').html('<img class="GIFs" src="' + GIFsArray[triviaGame.questionNumber] + '>');
             //I ended up assigning the answer as a class to the choices divs and then checking to see if the clicked answer was listed in those classes to determine if the answer was correct. Then increment the counts for questionNumber and correctAnswers
 
             if ($(this).hasClass(questionsArray[triviaGame.questionNumber].correctChoice)) {

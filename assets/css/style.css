@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-	font-family: "Arial", Helvetica, sans-serif;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 70px;
 	text-align: center;
 	color: white;
@@ -25,7 +25,10 @@ h1 {
 	position: relative;
 	width: 960px;
 	height: 600px;
-	background: white;
+	background: #cccccc;
+	/*background-image: url("../images/kaskade.png");
+	background-repeat: repeat;
+	overflow: auto;*/
 }
 
 #startButtonDiv {
@@ -65,7 +68,18 @@ h1 {
 }
 
 #choiceOneDiv, #choiceTwoDiv, #choiceThreeDiv, #choiceFourDiv {
+	font-family: 'Mirza', cursive;
 	text-align: center;
 	font-size: 40px;
 }
 
+#choiceOneDiv:hover, #choiceTwoDiv:hover, #choiceThreeDiv:hover, #choiceFourDiv:hover {
+	color: white;
+	background: #666666;
+}
+
+.GIFs {
+	margin: 0 auto;
+    display: block;
+
+}
